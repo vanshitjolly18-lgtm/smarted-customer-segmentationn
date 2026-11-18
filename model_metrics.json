@@ -1,0 +1,16 @@
+{
+  "dataset_type": "synthetic academic demonstration",
+  "random_seed": 42,
+  "transactions": 42000,
+  "unique_customers": 5000,
+  "clusters": 4,
+  "kmeans_inertia": 4380.038526068824,
+  "silhouette_sample_2000": 0.3587940674347598,
+  "davies_bouldin": 0.8836975254967302,
+  "calinski_harabasz": 4037.8189964556923,
+  "pca_explained_variance_ratio": [
+    0.7238645514653425,
+    0.25919143124082944
+  ],
+  "note": "PCA is for visualisation only; K-Means is trained on all three scaled RFM features."
+}
