@@ -6,8 +6,8 @@ import streamlit as st
 import plotly.express as px
 
 ROOT = Path(__file__).resolve().parent
-DATA = ROOT / "data" / "synthetic_ecommerce_transactions.csv"
-OUT = ROOT / "outputs"
+DATA = ROOT / "synthetic_ecommerce_transactions.csv"
+OUT = ROOT
 
 st.set_page_config(page_title="E-commerce Customer Segmentation", page_icon="🛍️", layout="wide")
 st.title("🛍️ E-commerce Customer Segmentation")
@@ -25,7 +25,7 @@ def load_data():
 try:
     tx, rfm, profile, metrics = load_data()
 except FileNotFoundError:
-    st.error("Project files are missing. Keep the data and outputs folders beside app.py, then run train_model.py.")
+    st.error("Project files are missing. Keep the CSV and generated output files in the same folder as app.py.")
     st.stop()
 
 with st.sidebar:
@@ -85,3 +85,4 @@ st.caption("The silhouette score indicates moderate cluster separation. Cluster 
 st.subheader("Sample transactions")
 st.dataframe(filtered_tx.head(20), use_container_width=True, hide_index=True)
 st.download_button("Download customer segments CSV", data=rfm.to_csv(index=False).encode("utf-8"), file_name="customer_rfm_segments.csv", mime="text/csv")
+
