@@ -13,9 +13,8 @@ from sklearn.decomposition import PCA
 from sklearn.metrics import silhouette_score, davies_bouldin_score, calinski_harabasz_score
 
 ROOT = Path(__file__).resolve().parent
-DATA = ROOT / "data" / "synthetic_ecommerce_transactions.csv"
-OUT = ROOT / "outputs"
-OUT.mkdir(exist_ok=True)
+DATA = ROOT / "synthetic_ecommerce_transactions.csv"
+OUT = ROOT
 
 
 def build_rfm(transactions: pd.DataFrame) -> pd.DataFrame:
